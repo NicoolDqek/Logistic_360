@@ -1,26 +1,38 @@
-import { useFonts } from 'expo-font';
-import { Montserrat_400Regular, Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Colors,Fonts } from "@/constants/theme";
+
+const { brand, primary } = Colors;
 
 export default function RootLayout() {
-  // 🔥 CARGAR FUENTES
-  const [fontsLoaded] = useFonts({
-    Montserrat_400Regular,
-    Montserrat_500Medium,
-    Montserrat_600SemiBold,
-    Montserrat_700Bold,
-  });
-
-  // Esperar a que carguen las fuentes
-  if (!fontsLoaded) {
-    return null; // O un loading screen
-  }
-
   return (
     <Stack>
-      <Stack.Screen name="Login" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen 
+        name="index" 
+        options={{ 
+          headerShown: false   
+        }} 
+      />
+      <Stack.Screen name="login" options={{ headerShown: false }} />
+      <Stack.Screen 
+        name="Home" 
+        options={{ 
+          headerTitle: "Inicio",
+          headerStyle: {
+            backgroundColor: brand, 
+          },
+          headerTintColor: primary, 
+           headerTitleStyle: {
+            fontWeight: 'bold',
+             fontSize: 20,
+           fontFamily: Fonts.rounded
+
+          }
+        }}  
+      />
+      <Stack.Screen name="Parameters" />
+      <Stack.Screen name="Configuration" />
+      <Stack.Screen name="Recepcion" />
+   
     </Stack>
   );
 }
