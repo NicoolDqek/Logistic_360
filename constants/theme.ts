@@ -1,14 +1,14 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
+const tintColorLight = '#1447E6';
 const tintColorDark = '#fff';
 
 export const Colors = {
+   primary: "#ffffffff",
+  secondary: "#e1e0e5ff",
+  ternary: "#1447E6",
+  darkLinght: "#a9a6a6ff",
+  brand: "#2d4384ff",
   light: {
     text: '#11181C',
     background: '#fff',
@@ -16,7 +16,9 @@ export const Colors = {
     icon: '#687076',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
-  },
+  }
+  
+ ,
   dark: {
     text: '#ECEDEE',
     background: '#151718',
@@ -27,27 +29,17 @@ export const Colors = {
   },
 };
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
-    serif: "Georgia, 'Times New Roman', serif",
-    rounded: "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
-    mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-  },
-});
+ 
+export const Fonts = {
+ 
+  regular: 'Montserrat_400Regular',
+  medium: 'Montserrat_500Medium', 
+  semiBold: 'Montserrat_600SemiBold',
+  bold: 'Montserrat_700Bold',
+  
+
+  sans: 'Montserrat_400Regular',
+  serif: 'Montserrat_400Regular',
+  rounded: 'Montserrat_400Regular',
+  mono: 'Montserrat_400Regular',
+};
