@@ -1,24 +1,19 @@
 import styled from "styled-components/native";
 import Constants from "expo-constants";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Colors } from "@/constants/theme";
+ 
 
 const StatusBarHeight = Constants.statusBarHeight;
+ 
 
-export const Colors = {
-  primary: "#ffffffff",
-  secondary: "#e1e0e5ff",
-  ternary: "#1447E6",
-  darkLinght: "#a9a6a6ff",
-  brand: "#2d4384ff",
-};
 
-const { primary, secondary, ternary, darkLinght, brand } = Colors;
 
 export const StyledContainer = styled(SafeAreaView)`
   flex: 1;
   padding: 25px;
   padding-top: ${StatusBarHeight + 10}px;
-  background-color: ${primary};
+  background-color: ${Colors.primary};
 `;
 
 export const InnerContainer = styled.View`
@@ -38,7 +33,7 @@ export const PageTitle = styled.Text`
   font-size: 30px;
   text-align: center;
   font-weight: bold;
-  color: ${brand};
+  color: ${Colors.brand};
   padding: 10px;
 `;
 
@@ -48,7 +43,7 @@ export const SubTitle = styled.Text`
   margin-bottom: 30px;
   letter-spacing: 2px;
   font-weight: bold;
-  color: ${ternary};
+  color: ${Colors.ternary};
   margin-left: 15px;
   width: 100%;
   text-align: left;
@@ -61,7 +56,7 @@ export const StyledFormArea = styled.View`
 `;
 
 export const StyledTextInput = styled.TextInput`
-  background-color: ${secondary};
+  background-color: ${Colors.secondary};
   padding-left: 55px;
   padding-right: 55px;
   border-radius: 5px;
@@ -69,13 +64,13 @@ export const StyledTextInput = styled.TextInput`
   height: 60px;
   margin-vertical: 3px;
   margin-bottom: 10px;
-  color: ${ternary};
+  color: ${Colors.ternary};
   font-family: Montserrat_400Regular;
    elevation: 10;
 `;
 
 export const StyledInputLabel = styled.Text`
-  color: ${ternary};
+  color: ${Colors.ternary};
   font-size: 13px;
   text-align: left;
   font-family: Montserrat_500Medium;
@@ -86,6 +81,8 @@ export const LeftIcon = styled.View`
   top: 38px;
   position: absolute;
   z-index: 1;
+ 
+
 `;
 
 export const RightIcon = styled.TouchableOpacity`
@@ -97,7 +94,7 @@ export const RightIcon = styled.TouchableOpacity`
 
 export const StyledButton = styled.TouchableOpacity`
   padding: 15px;
-  background-color: ${brand};
+  background-color: ${Colors.brand};
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -107,14 +104,14 @@ export const StyledButton = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-  color: ${primary};
+  color: ${Colors.primary};
   font-size: 16px;
   font-family: Montserrat_600SemiBold;
   letter-spacing: 4px;
 `;
 
 export const ExtraText = styled.Text`
-  color: ${ternary};
+  color: ${Colors.ternary};
   font-size: 12px;
   text-align: center;
   margin: 5px;
@@ -132,7 +129,7 @@ export const FooterContainer = styled(SafeAreaView)`
   align-items: center;
   justify-content: space-around;
   padding: 10px 25px;
-  background-color: ${primary};
+  background-color: ${Colors.primary};
   position: absolute;
   bottom: 0;
   left: 0;
@@ -152,7 +149,7 @@ export const ConfigIcon = styled.View`
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: ${secondary};
+  background-color: ${Colors.secondary};
   justify-content: center;
   align-items: center;
   shadow-color: #000;
