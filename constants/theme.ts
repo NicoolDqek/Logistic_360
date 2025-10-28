@@ -6,7 +6,7 @@ const tintColorDark = '#fff';
 export const Colors = {
    primary: "#ffffffff",
   secondary: "#e1e0e5ff",
-  ternary: "#1447E6",
+  ternary: "#0d0672ff",
   darkLinght: "#a9a6a6ff",
   brand: "#2d4384ff",
   light: {
@@ -36,10 +36,24 @@ export const Fonts = {
   medium: 'Montserrat_500Medium', 
   semiBold: 'Montserrat_600SemiBold',
   bold: 'Montserrat_700Bold',
-  
-
   sans: 'Montserrat_400Regular',
   serif: 'Montserrat_400Regular',
   rounded: 'Montserrat_400Regular',
   mono: 'Montserrat_400Regular',
 };
+
+
+
+export const ImagenesCards = {
+  compras: require("../assets/images/compras.png"),
+  devolucion: require("../assets/images/devolucion.png"),
+  distribucion: require("../assets/images/distribucion.png"),
+  entradaMercancia: require("../assets/images/entradaMercancia.png"),
+  gestionar: require("../assets/images/gestionar.png"),
+  organizar: require("../assets/images/organizar.png"),
+  recepcion: require("../assets/images/Recepcion.png"),
+  construccion:require("../assets/images/Build.png")
+
+}
+
+
