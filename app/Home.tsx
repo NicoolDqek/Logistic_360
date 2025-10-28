@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
-import styled from 'styled-components/native';
-import { Colors } from '@/constants/theme';
+ 
+import {  ImagenesCards } from '@/constants/theme';
 import Cards from '@/components/cards/Cards';
+import { Cabecera, CabeceraImg, CardsSection, HomeScreenContainer } from '@/components/ui/StylesRecepcion';
 
 const cabeceraImg = require("@/assets/images/Login.png");
 
@@ -12,45 +12,12 @@ export default function Home() {
       <Cabecera>
         <CabeceraImg source={cabeceraImg}/>
       </Cabecera>
-      <CardsSection>
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-      </CardsSection>
+     <CardsSection>
+  <Cards title='Recepcion' image={ImagenesCards.recepcion} route='./Recepcion' />
+  <Cards title='Organizar' image={ImagenesCards.organizar} route='./Organizacion' />
+  <Cards title='Gestionar' image={ImagenesCards.gestionar} route='./Gestion' />
+  <Cards title='Distribucion' image={ImagenesCards.distribucion} route='./Distribucion' />
+</CardsSection>
     </HomeScreenContainer>
   );
 }
-
-export const HomeScreenContainer = styled.View`
-  flex: 1;
-  width: 100%;
-  align-items: center;
-  justify-content: center; 
-  background-color:${Colors.primary}
-`;
-
-export const Cabecera = styled.View`
-  flex:1;
-  width: 100%;
-  align-items: center;
-  justify-content: center; 
-  padding: 20px;
-`;
-
-export const CabeceraImg = styled.Image`
-  height: 160px;
-  resize-mode: contain;
-`;
-
-const CardsSection = styled.View`
-  flex: 3;
-  width: 100%;
-  padding: 20px;
-  align-items: center;
-  justify-content: center; 
-  flex-direction: row;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  
-`;

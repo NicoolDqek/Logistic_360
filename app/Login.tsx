@@ -7,11 +7,10 @@ import {
   PageLogo,
   SubTitle,
 } from "@/components/ui/stylesLogin";
-import KeyboardWrapper from "@/components/KeyboardWrapper";
 import { useLogin } from "@/hooks/useLogin";
 import { LoginForm } from "@/components/forms/LoginForm";
 import { LoginFooter } from "@/components/ui/LoginFooter";
-
+import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 const LoginImg = require("@/assets/images/Login.png");
 
 export default function Login() {
@@ -29,18 +28,27 @@ export default function Login() {
       <StyledContainer>
         <StatusBar style="dark" />
 
-        <KeyboardWrapper>
-          <InnerContainer>
-            <PageLogo source={LoginImg} />
-            <SubTitle>Bienvenido</SubTitle>
 
-            <LoginForm
-              hidePassword={hidePassword}
-              setHidePassword={setHidePassword}
-              onSubmit={handleLogin}
-            />
-          </InnerContainer>
-        </KeyboardWrapper>
+ <KeyboardAvoidingView 
+  style={{flex: 1}}
+  behavior={Platform.OS === "ios" ? "padding" : "height"}
+>
+  <ScrollView 
+    contentContainerStyle={{flexGrow: 1}}
+    keyboardShouldPersistTaps="handled"
+  >
+    <InnerContainer>
+      <PageLogo source={LoginImg} />
+      <SubTitle>Bienvenido(a)</SubTitle>
+      
+      <LoginForm
+        hidePassword={hidePassword}
+        setHidePassword={setHidePassword}
+        onSubmit={handleLogin}
+      />
+    </InnerContainer>
+  </ScrollView>
+</KeyboardAvoidingView>
 
         <LoginFooter onConfigPress={goToParameters} />
       </StyledContainer>

@@ -1,47 +1,68 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+     import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { Stack } from "expo-router";  
+import {
+  StyledContainer,
+  InnerContainer,
+  PageLogo,
+  SubTitle,
+} from "@/components/ui/stylesLogin";
+import { useLogin } from "@/hooks/useLogin";
+import { LoginForm } from "@/components/forms/LoginForm";
+import { LoginFooter } from "@/components/ui/LoginFooter";
 
+import { useRouter } from "expo-router";
+import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { ParametersForm } from "@/components/forms/ParametersForm";
+import { Cabecera } from "@/components/ui/StylesRecepcion";
+
+
+ 
 export default function Parameters() {
   const router = useRouter();
+  const LoginImg = require("@/assets/images/Login.png");
+   
+
+ const {
+    hidePassword,
+    setHidePassword,
+    handleLogin,
+    goToParameters
+  } = useLogin();
+
 
   return (
-    <View style={styles.container}>
-      {/* Botón para volver */}
-      <TouchableOpacity 
-        style={styles.backButton} 
-        onPress={() => router.back()}
-      >
-        <Ionicons name="arrow-back" size={24} color="#000" />
-        <Text style={styles.backText}>Volver al Login</Text>
-      </TouchableOpacity>
+   <>
+      <Stack.Screen options={{ headerShown: false }} />
+      
+      <StyledContainer>
+        <StatusBar style="dark" />
 
-      <Text style={styles.title}>🎛️ Pantalla de Parameters</Text>
-      <Text>¡Funciona! Navegación simple sin tabs complicados</Text>
-    </View>
+
+ <KeyboardAvoidingView 
+  style={{flex: 1}}
+  behavior={Platform.OS === "ios" ? "padding" : "height"}
+>
+  <ScrollView 
+    contentContainerStyle={{flexGrow: 1}}
+    keyboardShouldPersistTaps="handled"
+  >
+    <InnerContainer>
+      <Cabecera/>
+      
+      
+      <ParametersForm
+        onSubmit={handleLogin}
+      />
+    </InnerContainer>
+  </ScrollView>
+</KeyboardAvoidingView>
+
+      </StyledContainer>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#fff",
-  },
-  backButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 50,
-    marginBottom: 30,
-  },
-  backText: {
-    marginLeft: 10,
-    fontSize: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
-});
+  
+
+ 
